@@ -4,16 +4,22 @@ import { useNavigate } from 'react-router-dom';
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState({
-        name: 'Admin User',
-        email: 'admin@example.com',
-        role: 'Admin'
+    const [user, setUser] = useState(() => {
+        const savedUser = localStorage.getItem('user');
+        return savedUser ? JSON.parse(savedUser) : null;
     });
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
 
     useEffect(() => {
-        // Auth persistence disabled - always uses mock user
+        const token = localStorage.getItem('token');
+        const savedUser = localStorage.getItem('user');
+
+        if (token && savedUser) {
+            setUser(JSON.parse(savedUser));
+        } else {
+            setUser(null);
+        }
         setLoading(false);
     }, []);
 
@@ -24,6 +30,8 @@ export const AuthProvider = ({ children }) => {
 
         if (userData.role === 'User') {
             navigate('/');
+        } else if (userData.role === 'Vendor') {
+            navigate('/vendor/dashboard');
         } else {
             navigate('/admin/dashboard');
         }
@@ -37,8 +45,10 @@ export const AuthProvider = ({ children }) => {
 
         if (role === 'User') {
             navigate('/login');
+        } else if (role === 'Vendor') {
+            navigate('/vendor/login');
         } else {
-            navigate('/admin/login');
+            navigate('/login');
         }
     };
 
