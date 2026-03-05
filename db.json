@@ -1,0 +1,458 @@
+{
+  "stats": [
+    {
+      "id": 1,
+      "title": "Total Orders",
+      "value": "1,280",
+      "change": "+12%",
+      "icon": "orders",
+      "path": "/admin/orders"
+    },
+    {
+      "id": 2,
+      "title": "Total Revenue",
+      "value": "₹45,200",
+      "change": "+8%",
+      "icon": "revenue",
+      "path": "/admin/reports"
+    },
+    {
+      "id": 3,
+      "title": "Active Vendors",
+      "value": "45",
+      "change": "+2",
+      "icon": "vendors",
+      "path": "/admin/vendors"
+    },
+    {
+      "id": 4,
+      "title": "Low Stock",
+      "value": "12",
+      "change": "-3",
+      "icon": "stock",
+      "path": "/admin/inventory"
+    },
+    {
+      "id": 5,
+      "title": "Pending Orders",
+      "value": "25",
+      "change": "+5",
+      "icon": "pending",
+      "path": "/admin/orders",
+      "filterStatus": "Pending"
+    },
+    {
+      "id": 6,
+      "title": "Total Customers",
+      "value": "8,420",
+      "change": "+18%",
+      "icon": "customers",
+      "path": "/admin/customers"
+    }
+  ],
+  "orders": [
+    {
+      "id": "ORD-001",
+      "customer": "John Doe",
+      "product": "Backbone Support Belt",
+      "vendor": "HealthCare Plus",
+      "amount": 120,
+      "status": "Delivered",
+      "date": "2024-03-01"
+    },
+    {
+      "id": "ORD-002",
+      "customer": "Jane Smith",
+      "product": "Neck Pain Relief Gel",
+      "vendor": "MedStore",
+      "amount": 45,
+      "status": "Pending",
+      "date": "2024-03-02"
+    },
+    {
+      "id": "ORD-003",
+      "customer": "Robert Brown",
+      "product": "Knee Brace",
+      "vendor": "OrthoCare",
+      "amount": 85,
+      "status": "Shipped",
+      "date": "2024-03-02"
+    },
+    {
+      "id": "ORD-004",
+      "customer": "Emily White",
+      "product": "Joint Pain Capsules",
+      "vendor": "HealthCare Plus",
+      "amount": 30,
+      "status": "Confirmed",
+      "date": "2024-03-03"
+    },
+    {
+      "id": "ORD-005",
+      "customer": "Michael Green",
+      "product": "Muscle Massage Oil",
+      "vendor": "NatureMed",
+      "amount": 25,
+      "status": "Cancelled",
+      "date": "2024-03-03"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Backbone Support Belt",
+      "category": "Backbone Pain",
+      "vendor": "HealthCare Plus",
+      "price": 120,
+      "stock": 45,
+      "sku": "BB-001",
+      "status": "Active",
+      "painType": "Backbone Pain"
+    },
+    {
+      "id": 2,
+      "name": "Neck Tension Relief",
+      "category": "Neck Pain",
+      "vendor": "MedStore",
+      "price": 35,
+      "stock": 120,
+      "sku": "NK-005",
+      "status": "Active",
+      "painType": "Neck Pain"
+    },
+    {
+      "id": 3,
+      "name": "Knee Compression Sleeve",
+      "category": "Joint Pain",
+      "vendor": "OrthoCare",
+      "price": 25,
+      "stock": 5,
+      "sku": "JT-012",
+      "status": "Active",
+      "painType": "Joint Pain"
+    },
+    {
+      "id": 4,
+      "name": "Muscle Recovery Balm",
+      "category": "Muscle Pain",
+      "vendor": "NatureMed",
+      "price": 15,
+      "stock": 80,
+      "sku": "MS-008",
+      "status": "Inactive",
+      "painType": "Muscle Pain"
+    },
+    {
+      "id": 5,
+      "name": "Leg Cramp Relief",
+      "category": "Leg Pain",
+      "vendor": "HealthCare Plus",
+      "price": 40,
+      "stock": 30,
+      "sku": "LG-002",
+      "status": "Active",
+      "painType": "Leg Pain"
+    }
+  ],
+  "vendors": [
+    {
+      "id": 1,
+      "name": "HealthCare Plus",
+      "business": "HC Plus Ltd",
+      "contact": "+1234567890",
+      "email": "info@hcplus.com",
+      "status": "Active",
+      "commission": 10
+    },
+    {
+      "id": 2,
+      "name": "MedStore",
+      "business": "MedStore Pharma",
+      "contact": "+1987654321",
+      "email": "sales@medstore.com",
+      "status": "Active",
+      "commission": 12
+    },
+    {
+      "id": 3,
+      "name": "OrthoCare",
+      "business": "OrthoCare Solutions",
+      "contact": "+1122334455",
+      "email": "support@orthocare.com",
+      "status": "Suspended",
+      "commission": 15
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Leg Pain",
+      "description": "Products for leg related pains",
+      "status": "Active"
+    },
+    {
+      "id": 2,
+      "name": "Neck Pain",
+      "description": "Products for neck and cervical relief",
+      "status": "Active"
+    },
+    {
+      "id": 3,
+      "name": "Backbone Pain",
+      "description": "Products for spine and back support",
+      "status": "Active"
+    },
+    {
+      "id": 4,
+      "name": "Joint Pain",
+      "description": "Products for arthritis and joint issues",
+      "status": "Active"
+    },
+    {
+      "id": 5,
+      "name": "Muscle Pain",
+      "description": "Relief for muscle strains and soreness",
+      "status": "Active"
+    }
+  ],
+  "notifications": [
+    {
+      "id": 1,
+      "title": "New Order Received",
+      "message": "Order #ORD-005 has been placed by Michael Green.",
+      "type": "order",
+      "time": "2 mins ago"
+    },
+    {
+      "id": 2,
+      "title": "Low Stock Alert",
+      "message": "Knee Compression Sleeve is running low on stock (5 items left).",
+      "type": "stock",
+      "time": "1 hour ago"
+    },
+    {
+      "id": 3,
+      "title": "New Vendor Registration",
+      "message": "PharmaPlus has requested for vendor approval.",
+      "type": "user",
+      "time": "3 hours ago"
+    },
+    {
+      "id": 4,
+      "title": "Withdrawal Request",
+      "message": "Vendor MedStore has requested a payout of ₹450.",
+      "type": "order",
+      "time": "5 hours ago"
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com",
+      "phone": "+123456789",
+      "orders": 5,
+      "spent": 450,
+      "status": "Active"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "phone": "+198765432",
+      "orders": 2,
+      "spent": 120,
+      "status": "Active"
+    },
+    {
+      "id": 3,
+      "name": "Robert Brown",
+      "email": "robert@example.com",
+      "phone": "+112233445",
+      "orders": 12,
+      "spent": 1200,
+      "status": "Active"
+    },
+    {
+      "id": 4,
+      "name": "Emily White",
+      "email": "emily@example.com",
+      "phone": "+155667788",
+      "orders": 0,
+      "spent": 0,
+      "status": "Inactive"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "user": "Alice Johnson",
+      "product": "Backbone Support Belt",
+      "rating": 5,
+      "comment": "Excellent support and very comfortable to wear for long hours.",
+      "date": "2024-03-01",
+      "status": "Approved"
+    },
+    {
+      "id": 2,
+      "user": "Mark Wilson",
+      "product": "Neck Pain Relief Gel",
+      "rating": 4,
+      "comment": "Works well, but the scent is a bit strong.",
+      "date": "2024-03-02",
+      "status": "Pending"
+    },
+    {
+      "id": 3,
+      "user": "Sarah Davis",
+      "product": "Knee Brace",
+      "rating": 5,
+      "comment": "Best knee brace I've ever used. Really helped with my joint pain.",
+      "date": "2024-03-03",
+      "status": "Approved"
+    }
+  ],
+  "payments": [
+    {
+      "id": "PAY-001",
+      "orderId": "ORD-001",
+      "amount": 120,
+      "method": "Credit Card",
+      "status": "Completed",
+      "date": "2024-03-01"
+    },
+    {
+      "id": "PAY-002",
+      "orderId": "ORD-002",
+      "amount": 45,
+      "method": "PayPal",
+      "status": "Pending",
+      "date": "2024-03-02"
+    },
+    {
+      "id": "PAY-003",
+      "orderId": "ORD-003",
+      "amount": 85,
+      "method": "Credit Card",
+      "status": "Completed",
+      "date": "2024-03-02"
+    }
+  ],
+  "mainProduct": {
+    "id": "PROD-BELT",
+    "name": "Advanced Pain Relief Belt",
+    "shortDescription": "Medical-grade compression with infrared heat therapy for instant relief.",
+    "description": "Experience the next generation of pain management with the Relivex Advanced Pain Relief Belt. Designed for maximum comfort and clinical efficiency.",
+    "price": 2499,
+    "originalPrice": 4999,
+    "discount": "50% OFF",
+    "rating": 4.8,
+    "reviews": 1284,
+    "stock": 15,
+    "deliveryTime": "15-20 Mins",
+    "image": "https://img.freepik.com/free-photo/medical-belt-isolated-white-background_181624-27361.jpg",
+    "features": [
+      "Adjustable Compression",
+      "Infrared Heat Technology",
+      "Breathable Fabric",
+      "Battery Powered"
+    ]
+  },
+  "users": [
+    {
+      "id": 1,
+      "name": "Super Admin",
+      "email": "admin@hospecom.com",
+      "password": "admin123",
+      "role": "Super Admin"
+    },
+    {
+      "id": 2,
+      "name": "Staff Account",
+      "email": "staff@hospecom.com",
+      "password": "staff123",
+      "role": "Admin"
+    },
+    {
+      "id": 3,
+      "name": "User Account",
+      "email": "user@example.com",
+      "password": "user123",
+      "role": "User"
+    },
+    {
+      "name": "vinod",
+      "email": "vinod@gmail.com",
+      "password": "vinod",
+      "role": "User",
+      "id": 4
+    },
+    {
+      "name": "vinod",
+      "email": "vinod@gmail.com",
+      "password": "vinod",
+      "role": "User",
+      "id": 5
+    },
+    {
+      "name": "Vinod Thatipally",
+      "email": "thatipallyvinod@gmail.com",
+      "password": "vinod",
+      "role": "Admin",
+      "id": 6
+    },
+    {
+      "name": "Vinod Thatipally",
+      "email": "thatipallyvinod@gmail.com",
+      "password": "vinod",
+      "role": "Admin",
+      "id": 7
+    },
+    {
+      "name": "Vinod Thatipally",
+      "email": "thatipallyvinod@gmail.com",
+      "password": "vinod",
+      "role": "Admin",
+      "id": 8
+    },
+    {
+      "name": "Vinod Thatipally",
+      "email": "thatipallyvinod@gmail.com",
+      "password": "vinod",
+      "role": "Admin",
+      "id": 9
+    },
+    {
+      "name": "Vinod Thatipally",
+      "email": "thatipallyvinod@gmail.com",
+      "password": "vinod",
+      "role": "Admin",
+      "id": 10
+    },
+    {
+      "name": "Vinod Thatipally",
+      "email": "thatipallyvinod@gmail.com",
+      "password": "vinod",
+      "role": "Admin",
+      "id": 11
+    }
+  ],
+  "coupons": [
+    {
+      "id": 1,
+      "code": "HEALTHY10",
+      "discount": "10%",
+      "expiry": "2024-12-31",
+      "usage": 45,
+      "status": "Active"
+    },
+    {
+      "id": 2,
+      "code": "PAINFREE20",
+      "discount": "20%",
+      "expiry": "2024-06-30",
+      "usage": 12,
+      "status": "Active"
+    }
+  ]
+}
