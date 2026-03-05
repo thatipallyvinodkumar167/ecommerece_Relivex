@@ -17,12 +17,12 @@ import {
 } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
-import { useOrder } from '../../context/OrderContext';
+import { useOrders } from '../../context/OrderContext';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Checkout = () => {
     const { cartItems, cartTotal, clearCart } = useCart();
-    const { placeOrder } = useOrder();
+    const { placeOrder } = useOrders();
     const navigate = useNavigate();
     const theme = useTheme();
 

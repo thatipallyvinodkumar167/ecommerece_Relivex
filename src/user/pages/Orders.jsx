@@ -16,7 +16,7 @@ import {
     Timer as TimerIcon
 } from '@mui/icons-material';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useOrder } from '../../context/OrderContext';
+import { useOrders } from '../../context/OrderContext';
 import { useNavigate } from 'react-router-dom';
 
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
@@ -98,7 +98,7 @@ const steps = [
 ];
 
 const Orders = () => {
-    const { orders } = useOrder();
+    const { orders } = useOrders();
     const navigate = useNavigate();
 
     // Helper to get status index

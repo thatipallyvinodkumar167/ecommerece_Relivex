@@ -87,7 +87,7 @@ const UserLayout = (props) => {
                                 sx={{ display: { xs: 'none', md: 'flex' } }}
                             >
                                 <Typography component={Link} to="/" sx={{ textDecoration: 'none', color: '#1e293b', fontWeight: 700, '&:hover': { color: '#008a45' } }}>Home</Typography>
-                                <Typography component={Link} to="/orders" sx={{ textDecoration: 'none', color: '#1e293b', fontWeight: 700, '&:hover': { color: '#008a45' } }}>Shop</Typography>
+                                <Typography component={Link} to="/" sx={{ textDecoration: 'none', color: '#1e293b', fontWeight: 700, '&:hover': { color: '#008a45' } }}>Shop</Typography>
                                 <Typography sx={{ cursor: 'pointer', color: '#1e293b', fontWeight: 700, '&:hover': { color: '#008a45' } }}>About</Typography>
                                 <Typography sx={{ cursor: 'pointer', color: '#1e293b', fontWeight: 700, '&:hover': { color: '#008a45' } }}>Support</Typography>
                             </Stack>

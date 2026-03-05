@@ -23,6 +23,13 @@ const Home = () => {
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     const { data: products, isLoading } = useProducts();
     const { cartItems, addToCart, updateQuantity } = useCart();
+    const [selectedCategory, setSelectedCategory] = useState('All');
+
+    const categories = ['All', 'Backbone Pain', 'Neck Pain', 'Joint Pain', 'Leg Pain'];
+
+    const filteredProducts = selectedCategory === 'All'
+        ? products
+        : products?.filter(p => p.category === selectedCategory);
 
     const features = [
         { icon: <BoltIcon />, title: "Express Delivery", desc: "15-20 mins delivery to your doorstep" },
@@ -179,25 +186,70 @@ const Home = () => {
 
             {/* Product Grid */}
             <Container maxWidth="lg" sx={{ mt: 10 }}>
-                <Box sx={{ mb: 6, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
-                    <Box>
-                        <Typography variant="h3" sx={{ fontWeight: 900, mb: 1 }}>Premium Devices</Typography>
-                        <Typography variant="body1" color="textSecondary">Top-rated medical solutions for your recovery</Typography>
+                <Box sx={{ mb: 6 }}>
+                    <Box sx={{ mb: 4, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: 2 }}>
+                        <Box>
+                            <Typography variant="h3" sx={{ fontWeight: 900, mb: 1 }}>Premium Devices</Typography>
+                            <Typography variant="body1" color="textSecondary">Top-rated medical solutions for your recovery</Typography>
+                        </Box>
+                        <Button sx={{ fontWeight: 700, color: '#008a45' }}>View All Brands</Button>
                     </Box>
-                    <Button sx={{ fontWeight: 700, color: '#008a45' }}>View All Brands</Button>
+
+                    {/* Category Filter Pills */}
+                    <Stack
+                        direction="row"
+                        spacing={2}
+                        sx={{
+                            overflowX: 'auto',
+                            pb: 2,
+                            '&::-webkit-scrollbar': { display: 'none' },
+                            msOverflowStyle: 'none',
+                            scrollbarWidth: 'none',
+                        }}
+                    >
+                        {categories.map((cat) => (
+                            <Chip
+                                key={cat}
+                                label={cat}
+                                onClick={() => setSelectedCategory(cat)}
+                                sx={{
+                                    px: 2,
+                                    py: 2.5,
+                                    borderRadius: '16px',
+                                    fontWeight: 800,
+                                    fontSize: '0.95rem',
+                                    bgcolor: selectedCategory === cat ? '#008a45' : 'white',
+                                    color: selectedCategory === cat ? 'white' : '#64748b',
+                                    border: '1px solid',
+                                    borderColor: selectedCategory === cat ? '#008a45' : '#e2e8f0',
+                                    transition: 'all 0.3s ease',
+                                    '&:hover': {
+                                        bgcolor: selectedCategory === cat ? '#006d36' : '#f1f5f9',
+                                        borderColor: selectedCategory === cat ? '#006d36' : '#cbd5e1'
+                                    }
+                                }}
+                            />
+                        ))}
+                    </Stack>
                 </Box>
 
                 <Grid container spacing={4}>
                     {isLoading ? (
-                        [1, 2, 3, 4].map((i) => (
+                        [1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
                             <Grid item xs={12} sm={6} lg={3} key={i}>
-                                <Skeleton variant="rectangular" height={300} sx={{ borderRadius: '24px', mb: 2 }} />
-                                <Skeleton width="60%" />
-                                <Skeleton width="40%" />
+                                <Box sx={{ p: 2, borderRadius: '24px', border: '1px solid #f1f5f9' }}>
+                                    <Skeleton variant="rectangular" height={220} sx={{ borderRadius: '16px', mb: 2 }} />
+                                    <Skeleton width="80%" height={32} />
+                                    <Skeleton width="40%" height={24} sx={{ mb: 2 }} />
+                                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                        <Skeleton width={80} height={40} />
+                                        <Skeleton variant="circular" width={40} height={40} />
+                                    </Box>
+                                </Box>
                             </Grid>
                         ))
                     ) : (
-                        products?.map((product) => (
+                        filteredProducts?.map((product) => (
                             <Grid item xs={12} sm={6} lg={3} key={product.id}>
                                 <ProductCard product={product} />
                             </Grid>
